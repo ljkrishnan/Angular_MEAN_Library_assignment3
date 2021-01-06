@@ -1,0 +1,131 @@
+	
+<div id="body">
+
+    <div id="masthead">  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>{{title}}
+              <p class="lead"></p>
+            </h1>
+          </div>
+          <div class="col-md-5">
+            <div class="well well-lg"> 
+              <div class="row">
+                <div class="col-sm-12">
+                  
+                  <h4>Welcome Back: {{displayuser}}</h4>
+                  <h4>ID: {{useremail}}</h4>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div><!-- /cont -->
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="top-spacer"> </div>
+          </div>
+        </div> 
+      </div><!-- /cont -->
+      
+    </div>
+    
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-12"> 
+          
+          <div class="panel">
+            <div class="panel-body">
+              <br>
+              
+              
+              <!--/stories-->
+              <!-- /assets/images/ -->
+              <div class="row" id="storyboard">    
+                <br>
+                <div class="col-md-2 col-sm-3 text-center">
+                  <a class="story-title"><img alt="" src="{{bookItem.image}}" style="width:100px;height:100px;border-radius: 50%;"></a>
+                </div>
+                <div class="col-md-10 col-sm-9">
+                  <h3>{{bookItem.title}}</h3>
+                  <div class="row">
+                    <div class="col-xs-9">
+                      <h4><span class="label label-default"></span>{{bookItem.author}}</h4>
+                      <h4>
+                      <small style="font-family:courier,'new courier'; color: black;">{{bookItem.genre}}•
+                        <button class="btn btn-primary" style="color: white;" *ngIf="authService.loggedIn()" (click)="updatebook()">Edit</button>
+                        <button id="deletebutton" class="btn btn-danger" style="color: white;" *ngIf="authService.loggedIn()" (click)="deleteBook()">Delete</button>
+                      </small>
+                      </h4></div>
+                    <div class="col-xs-3"></div>
+                  </div>
+                  <hr>
+                  <br><br>
+                </div>
+                
+              </div>
+              
+              <!-- <%}%> -->
+              <!--/stories-->
+              
+              
+              <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
+            
+              
+            </div>
+          </div>
+                                                                                           
+                                                        
+                                                          
+           </div><!--/col-12-->
+      </div>
+    </div>
+                                                    
+                                                                                    
+    <hr>
+    
+    <div class="container" id="footer">
+      <div class="row">
+        <div class="col col-sm-12">
+          
+          <h1>Follow Us</h1>
+          <div class="btn-group">
+           <a class="btn btn-twitter btn-lg"><i class="icon-twitter icon-large"></i> Twitter</a>
+           <a class="btn btn-facebook btn-lg"><i class="icon-facebook icon-large"></i> Facebook</a>
+           <a class="btn btn-google-plus btn-lg"><i class="icon-google-plus icon-large"></i> Google+</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    
+    <hr>
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <ul class="list-inline">
+              <li><i class="icon-facebook icon-2x"></i></li>
+              <li><i class="icon-twitter icon-2x"></i></li>
+              <li><i class="icon-google-plus icon-2x"></i></li>
+              <li><i class="icon-pinterest icon-2x"></i></li>
+            </ul>
+            
+          </div>
+          <div class="col-md-12">
+            <p style="text-align: center;">Copyright@2021</p>      
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Below was body before -->
+    </div>

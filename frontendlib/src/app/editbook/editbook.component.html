@@ -1,0 +1,201 @@
+
+<div id="body">
+    <div id="masthead">  
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1>{{page}}
+                <p class="lead"></p>
+              </h1>
+            </div>
+            <div class="col-md-5">
+              <div class="well well-lg"> 
+                <div class="row">
+                  <div class="col-sm-12">
+                    
+                    <h4>Welcome Back: {{displayuser}}</h4>
+                    <h4>ID: {{useremail}}</h4>  
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div><!-- /cont -->
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="top-spacer"> </div>
+            </div>
+          </div> 
+        </div><!-- /cont -->
+        
+      </div>
+      
+      
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-12"> 
+            
+            <div class="panel">
+              <div class="panel-body">
+                
+                <!--Form Starts  #title="ngModel" ([a-z0-9\.\-\ \]+)@([a-z0-9\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?-->
+                <br>
+                <div class="col-lg-5"></div>
+                <div class="col-lg-9">
+                  <div id="myMargin">
+                    <form (ngSubmit)="editBook()" #editbook="ngForm" >
+                      <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-group">Book Title*</label>
+                            <input type="text" class="form-control" id="title" 
+                            placeholder="Title" name="title" [(ngModel)]="bookItem.title" #title="ngModel"
+                            required minlength="3" pattern="([a-zA-Z0-9]+)([\.\ \-\])?([a-zA-Z0-9]+)?"> 
+                            <!-- Book Error Display Starts -->
+                            <div *ngIf="title.invalid && (title.dirty || title.touched)"
+                              class="alert alert-danger">
+                        
+                              <div *ngIf="title.errors.required">
+                              Title is required.
+                              </div>
+                              <div *ngIf="title.errors.minlength">
+                              Title must be at least 3 characters long.
+                              </div>
+                              <div *ngIf="title.errors.pattern">
+                              Not a valid Format.
+                              </div>
+                            </div>
+                            <!-- Book Error Display Ends-->
+    
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group">Book Author*</label>
+                            <input type="text" class="form-control" id="author" placeholder="Author" 
+                            name="author" [(ngModel)]="bookItem.author" #author="ngModel"
+                            required minlength="3" pattern="([a-zA-Z]+)([\.\ \])?([a-zA-Z]+)?">
+                            <!-- Author Error Display Starts -->
+                              <div *ngIf="author.invalid && (author.dirty || author.touched)"
+                                class="alert alert-danger">
+                       
+                                <div *ngIf="author.errors.required">
+                                Author is required.
+                                </div>
+                                <div *ngIf="author.errors.minlength">
+                                Author must be at least 3 characters long.
+                                </div>
+                                <div *ngIf="author.errors.pattern">
+                                Not a valid Format.
+                                </div>
+                              </div>
+                            <!-- Author Error Display Ends-->
+                        </div>
+      
+                        <div class="form-group">
+                          <label for="form-group">Genre*</label>
+                          <input type="text" class="form-control" id="genre" placeholder="Genre" 
+                          name="genre" [(ngModel)]="bookItem.genre" #genre="ngModel"
+                          required minlength="3" pattern="([a-zA-Z]+)([\.\ \-])?([a-zA-Z]+)?">
+                            <!-- Genre Error Display Starts -->
+                              <div *ngIf="genre.invalid && (genre.dirty || genre.touched)"
+                                class="alert alert-danger">
+                       
+                                <div *ngIf="genre.errors.required">
+                                Genre is required.
+                                </div>
+                                <div *ngIf="genre.errors.minlength">
+                                Genre must be at least 3 characters long.
+                                </div>
+                                <div *ngIf="genre.errors.pattern">
+                                Not a valid Format.
+                                </div>
+                              </div>
+                            <!-- Genre Error Display Ends-->
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group">Image Url*</label>
+                            <input type="text" class="form-control" id="image" placeholder="Image Url" 
+                            name="image" [(ngModel)]="bookItem.image" #image="ngModel"
+                            required minlength="5">
+                            <!-- Genre Error Display Starts -->
+                              <div *ngIf="image.invalid && (image.dirty || image.touched)"
+                               class="alert alert-danger">
+                      
+                                <div *ngIf="image.errors.required">
+                                Image Url is required.
+                                </div>
+                                <div *ngIf="image.errors.minlength">
+                                Image Url must be at least 5 characters long.
+                                </div>
+                                <div *ngIf="image.errors.pattern">
+                                Not a valid Format.
+                                </div>
+                              </div>
+                            <!-- Genre Error Display Ends-->
+                          </div>
+                      </div>
+                      <br>
+                      <!-- <input type="submit" value="Submit"/> -->
+                      <button type="submit" value ="submit" id="submit" [disabled]=editbook.form.invalid class="btn btn-primary">Save</button>
+                    </form>
+                  </div>
+                    
+                    <hr>
+                </div>
+                
+                <!--Form Ends-->
+                
+              </div>
+            </div>
+                                                                                             
+                                                          
+                                                            
+             </div><!--/col-12-->
+        </div>
+      </div>
+                                                      
+                                                                                      
+      <hr>
+      
+      <div class="container" id="footer">
+        <div class="row">
+          <div class="col col-sm-12">
+            
+            <h1>Follow Us</h1>
+            <div class="btn-group">
+             <a class="btn btn-twitter btn-lg"><i class="icon-twitter icon-large"></i> Twitter</a>
+             <a class="btn btn-facebook btn-lg"><i class="icon-facebook icon-large"></i> Facebook</a>
+             <a class="btn btn-google-plus btn-lg"><i class="icon-google-plus icon-large"></i> Google+</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <hr>
+      
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-inline">
+                <li><i class="icon-facebook icon-2x"></i></li>
+                <li><i class="icon-twitter icon-2x"></i></li>
+                <li><i class="icon-google-plus icon-2x"></i></li>
+                <li><i class="icon-pinterest icon-2x"></i></li>
+              </ul>
+              
+            </div>
+            <div class="col-md-12">
+              <p style="text-align: center;">Copyright@2021</p>      
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Below was body before -->
+    </div>
+    
